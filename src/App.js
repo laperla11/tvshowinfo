@@ -17,7 +17,10 @@ class App extends React.Component {
   componentDidMount() {
     fetch("http://api.tvmaze.com/shows")
       .then(res => res.json())
-      .then(json => this.setState({ shows: json }));
+      .then(json => {
+        this.setState({ shows: json });
+        console.log(json);
+      });
   }
 
   selectShow = event => {
