@@ -15,7 +15,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    fetch("http://api.tvmaze.com/shows")
+    fetch("https://api.tvmaze.com/shows")
       .then(res => res.json())
       .then(json => {
         this.setState({ shows: json });
@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   selectShow = event => {
-    fetch(`http://api.tvmaze.com/shows/${event.target.value}/episodes`)
+    fetch(`https://api.tvmaze.com/shows/${event.target.value}/episodes`)
       .then(res => res.json())
       .then(json =>
         this.setState({
